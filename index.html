@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Amigo Secreto Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <img  class="inicial"  img src="robosorteadorvirtual.png" alt="Logo">
+        <h1>Sorteador de Amigo Secreto Virtual</h1>
+        
+        
+        <!-- Formulário para adicionar participantes -->
+        <div class="form-container">
+            <input type="text" id="nameInput" placeholder="Nome do participante" />
+            <input type="text" id="cpfInput" placeholder="CPF do participante" />
+            <button id="addBtn">Adicionar</button>
+        </div>
+        
+        <!-- Mensagem de status -->
+        <div id="statusMessage" class="status-message"></div>
+        
+        <!-- Lista de participantes -->
+        <h2>Participantes</h2>
+        <ul id="participantsList" class="participants-list"></ul>
+        
+        <!-- Botão para realizar o sorteio -->
+        <button id="sortBtn" class="btn-sort">Realizar Sorteio</button>
+        
+        <!-- Área de resultados (visível após o sorteio) -->
+        <div id="resultsSection" class="hidden">
+            <h2>Participantes do Amigo Secreto</h2>
+            <p>Clique no seu nome para descobrir quem você tirou!</p>
+            <div id="cardsContainer" class="cards-container"></div>
+        </div>
+    </div>
+    
+    <!-- Modal para validação de CPF e exibição do amigo secreto -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Verificação</h2>
+            <div id="cpfVerification">
+                <p>Para ver quem você tirou no sorteio, digite seu CPF:</p>
+                <input type="text" id="cpfVerify" placeholder="Digite seu CPF" />
+                <button id="checkCpfBtn">Verificar</button>
+                <button id="cancelBtn">Cancelar</button>
+            </div>
+            <div id="resultContainer" class="result-container">
+                <p>Você tirou:</p>
+                <div id="friendName" class="friend-name"></div>
+                <button id="closeResultBtn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
